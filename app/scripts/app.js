@@ -24,7 +24,7 @@ app.config(function ($routeProvider) {
     $routeProvider
       .when('/', {
         templateUrl: 'views/posts.html',
-        controller: 'PostCtrl'
+        controller: 'PostsCtrl'
       })
       .when('/posts/:postId', {
         templateUrl: 'views/showpost.html',
