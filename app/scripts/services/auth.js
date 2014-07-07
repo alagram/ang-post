@@ -13,12 +13,12 @@ app.factory('Auth', function($firebaseSimpleLogin, FIREBASE_URL, $rootScope) {
       return auth.user !== null;
     },
     logout: function() {
-      return auth.$logout;
+      return auth.$logout();
     }
   };
 
   $rootScope.signedIn = function() {
-    return Auth.signedIn;
+    return Auth.signedIn();
   };
 
   return Auth;
