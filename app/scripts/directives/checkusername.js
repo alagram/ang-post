@@ -26,7 +26,7 @@ app.directive('checkUsername', function(User) {
 
           return undefined;
         }
-      })
+      });
     }
-  }
+  };
 });
