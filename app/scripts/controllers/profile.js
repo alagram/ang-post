@@ -5,6 +5,30 @@ app.controller('ProfileCtrl', function($scope, $routeParams, Post, User) {
 
   $scope.commentedPosts = {};
 
+  $scope.upVotePost = function(postId, upVoted) {
+    if (upVoted) {
+      Post.clearVote(postId, upVoted);
+    } else {
+      Post.upVote(postId);
+    }
+  };
+
+  $scope.downVotePost = function(postId, downVoted) {
+    if (downVoted) {
+      Post.clearVote(postId, !downVoted);
+    } else {
+      Post.downVote(postId);
+    }
+  };
+
+  $scope.upVoted = function (post) {
+    return Post.upVoted(post);
+  };
+
+  $scope.downVoted = function (post) {
+    return Post.downVoted(post);
+  };
+
   function populatePosts() {
     $scope.posts = {};
 
